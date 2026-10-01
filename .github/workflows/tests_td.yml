@@ -1,0 +1,393 @@
+Colab is now part of Google AI Plans. Get upgraded compute power and a suite of new AI tools all in one bundle.
+Copie de td02_enonce.ipynb
+Copie de td02_enonce.ipynb_
+Open In Colab
+
+📋 Feuille de présence (remplir maintenant)
+
+[ ]
+
+Introduction
+Au TD précédent, vous avez appris à versionner votre travail localement avec Git : créer des commits, consulter l'historique, comparer des versions, annuler une erreur. Vos modifications étaient sauvegardées — mais uniquement sur votre propre machine.
+
+Imaginez maintenant que vous travaillez à deux sur un modèle de prévision économique. L'un d'entre vous ajoute des données, l'autre modifie le script. Comment éviter d'écraser le travail de l'autre ? Comment savoir qui a fait quoi, et pourquoi ? Comment partager votre code avec votre directeur de mémoire sans envoyer des fichiers par e-mail ?
+
+C'est exactement ce que GitHub résout.
+
+GitHub est un service d'hébergement dans le cloud qui s'appuie sur Git pour rendre votre travail accessible, collaboratif et traçable. Chaque dépôt que vous créez sur GitHub est une copie distante de votre projet : vous pouvez le partager avec un collègue, recevoir des retours via une Pull Request, ou déclencher automatiquement des vérifications à chaque modification.
+
+Dans ce TD, vous apprendrez à :
+
+créer et configurer un dépôt GitHub pour vos projets de données ;
+rédiger un fichier README clair pour présenter votre travail ;
+déposer et organiser vos notebooks sur GitHub ;
+utiliser les branches pour travailler sans risque sur votre code ;
+collaborer via les Issues et les Pull Requests ;
+mettre en place les tests automatiques qui vérifieront votre travail à chaque TD.
+À l'issue de cette séance, votre dépôt personnel upjv-python-datascience sera configuré et prêt pour toute l'année.
+
+🎬 Vidéo explicative — Introduction aux concepts de GitHub
+
+[ ]
+
+Configuration des ressources (ne pas modifier)
+
+[ ]
+1. Présentation de GitHub
+Dans ce premier chapitre, vous découvrirez tout ce qu'il faut savoir sur GitHub, ses nombreux avantages et ses différences par rapport à Git. Vous créerez votre compte, puis vous apprendrez à créer un dépôt et un fichier README pour vos projets de données.
+
+1.1 Qu'est-ce que GitHub
+Infographie — Introduction à GitHub
+
+[ ]
+
+⚙️ Préparation de l'exercice (exécuter d'abord)
+
+[ ]
+✅ Environnement prêt
+🔧 Exercice — Définition de GitHub
+
+[ ]
+# @title 🔧 Exercice — Définition de GitHub
+# ================================================================
+#  EXERCICE — Définition de GitHub                    [ 1 étape ]
+# ================================================================
+#
+# Vous avez découvert GitHub et comment il peut vous aider dans
+# le cadre de vos projets.
+#
+# Qu'est-ce que GitHub ?
+#
+#   1 — Logiciel de contrôle des versions
+#   2 — Plateforme de gestion de projets
+#   3 — Service d'hébergement basé dans le cloud
+#   4 — Programme d'interface de ligne de commande
+#
+# ----------------------------------------------------------------
+# Entrez le numéro de la bonne réponse (1, 2, 3 ou 4)
+# ----------------------------------------------------------------
+reponse = 3
+✅ Vérification
+
+[ ]
+Résultats :
+
+  ✅ Bonne réponse (3) : Correct ! GitHub est un service d'hébergement basé dans le cloud.
+⚙️ Préparation de l'exercice (exécuter d'abord)
+
+[ ]
+✅ Environnement prêt
+🔧 Exercice — Avantages de GitHub
+
+[ ]
+# @title 🔧 Exercice — Avantages de GitHub
+# ================================================================
+#  EXERCICE — Avantages de GitHub                     [ 1 étape ]
+# ================================================================
+#
+# Vous maîtrisez Git. Parmi les propositions suivantes,
+# laquelle ne fait PAS partie des avantages de GitHub ?
+#
+#   1 — Il facilite la collaboration avec n'importe quelle personne dans le monde.
+#   2 — Il vous permet de stocker et de suivre vos projets et vos fichiers.
+#   3 — Il existe de nombreux projets open source dont on peut s'inspirer ou auxquels on peut contribuer.
+#   4 — Il vous enseigne comment utiliser Git.
+#
+# ----------------------------------------------------------------
+# Entrez le numéro de la bonne réponse (1, 2, 3 ou 4)
+# ----------------------------------------------------------------
+reponse = 4
+✅ Vérification
+
+[ ]
+Résultats :
+
+  ✅ Bonne réponse (4) : Correct ! GitHub ne vous apprend pas Git — c'est l'inverse : vous devez déjà connaître Git pour utiliser GitHub.
+1.2 Créer son compte GitHub
+Infographie — Créer son compte GitHub
+
+[ ]
+
+1.3 Configuration d'un dépôt
+Infographie — La configuration d'un dépôt
+
+[ ]
+
+1.4 Rédaction de votre premier readme.md
+Infographie — Rédiger son readme
+
+[ ]
+
+📋 Modèle de README à copier
+
+[19]
+0 s
+
+# Python & Data Science — UPJV Amiens
+
+**Étudiant·e :** Prénom Nom
+**Formation :** L3 Économie / M1 Économie
+**Année :** 2026-2027
+
+## Description
+
+Ce dépôt contient mes travaux dirigés du cours
+Python & Data Science réalisés sur Google Colab.
+
+## Travaux dirigés
+
+| TD | Sujet | Statut |
+|----|-------|--------|
+| [TD1](td01_enonce.ipynb) | Introduction à Git | :white_check_mark: |
+| [TD2](td02_enonce.ipynb) | Introduction à GitHub | :white_check_mark: |
+| TD3 | Les bases de Python | :x: |
+
+## Crédits
+
+Cours de M. Guéry — Faculté d'Économie, UPJV
+
+1.5 Déposer son premier notebook sur GitHub
+Infographie — Déposer son notebook sur GitHub
+
+[38]
+0 s
+# @title Infographie — Déposer son notebook sur GitHub
+afficher_infographie("05_deposer_notebook_sur_github_pro.png")
+
+Étapes suivantes :
+2. Utilisation de dépôts
+Il est maintenant temps de découvrir comment travailler avec les dépôts sur GitHub. Vous découvrirez comment ajouter, modifier et supprimer des fichiers, changer de branche, créer des dépôts privés, ajouter des collaborateurs et générer des tokens d'accès personnels.
+
+2.1 Modification de la structure d'un dépôt
+Infographie — Modifier le contenu d'un dépôt
+
+[32]
+0 s
+
+
+Étapes suivantes :
+⚙️ Préparation de l'exercice (exécuter d'abord)
+
+[33]
+0 s
+# @title ⚙️ Préparation de l'exercice (exécuter d'abord)
+import requests
+
+try:
+    del actions_configurees
+except NameError:
+    pass
+
+# ----------------------------------------------------------------
+# Saisissez votre nom d'utilisateur GitHub au format prenom-nom
+# (ex. : "jean-dupont"), pas l'URL du dépôt
+# ----------------------------------------------------------------
+github_username = "Kimana319"
+
+REPO = "upjv-python-datascience"
+
+if github_username in ("", "___"):
+    print("❌ Remplacez ___ par votre nom d'utilisateur GitHub puis réexécutez cette cellule")
+else:
+    try:
+        r = requests.get(f"https://api.github.com/repos/{github_username}/{REPO}")
+        if r.status_code == 200:
+            print(f"✅ Dépôt {github_username}/{REPO} trouvé")
+        elif r.status_code == 404:
+            print(f"❌ Dépôt {github_username}/{REPO} introuvable — vérifiez votre nom d'utilisateur et que le dépôt est public")
+        elif r.status_code == 403:
+            print("⚠️  Limite de requêtes GitHub atteinte (60/h) — réessayez dans quelques minutes")
+        else:
+            print(f"⚠️  Erreur API ({r.status_code})")
+    except Exception as e:
+        print(f"❌ Erreur : {e}")
+✅ Dépôt Kimana319/upjv-python-datascience trouvé
+🔧 Exercice — Configurer GitHub Actions
+
+[35]
+0 s
+# @title 🔧 Exercice — Configurer GitHub Actions
+# ================================================================
+#  EXERCICE — Mettre en place les tests automatiques     [ 4 étapes ]
+# ================================================================
+#
+# À partir du TD03, chaque push sur votre branche dev_tdXX
+# déclenchera automatiquement la vérification de votre notebook.
+# Cette configuration se fait UNE SEULE FOIS maintenant.
+#
+# ----------------------------------------------------------------
+# Étape 1/4 — Récupérer le fichier de configuration
+# ----------------------------------------------------------------
+# Ouvrez le fichier brut du dépôt du cours dans un nouvel onglet :
+#   https://raw.githubusercontent.com/Maxencegu/python-datascience-l3/main/templates/tests/tests_td.yml
+# Sélectionnez tout (Ctrl+A) puis copiez (Ctrl+C)
+#
+# ----------------------------------------------------------------
+# Étape 2/4 — Créer le fichier dans votre dépôt
+# ----------------------------------------------------------------
+# Dans votre dépôt upjv-python-datascience :
+#   → Add file → Create new file
+#   → Dans le champ de nom, tapez exactement :
+#       .github/workflows/tests_td.yml
+#     (GitHub crée automatiquement les dossiers intermédiaires)
+#   → Collez le contenu dans la zone d'édition
+#
+# ----------------------------------------------------------------
+# Étape 3/4 — Commiter
+# ----------------------------------------------------------------
+# Message de commit : Add GitHub Actions workflow
+#   → bouton vert "Commit changes...", puis "Commit changes" dans la fenêtre
+#
+# ----------------------------------------------------------------
+# Étape 4/4 — Confirmer ici puis lancer la vérification
+# ----------------------------------------------------------------
+actions_configurees = True
+✅ Vérification
+
+[37]
+0 s
+Résultats :
+
+  ❌ .github/workflows/tests_td.yml introuvable dans votre dépôt (ou dépôt privé / nom d'utilisateur incorrect)
+     Vérifiez :
+     - Le nom exact : .github/workflows/tests_td.yml
+     - Que le contenu du fichier a bien été collé
+     - Que le commit a bien été effectué
+2.2 Utilisation des branches
+Infographie — Utilisation des branches
+
+[ ]
+
+⚙️ Préparation de l'exercice (exécuter d'abord)
+
+[ ]
+🔧 Exercice — Créer la branche dev_td03 et protéger main
+
+[ ]
+# @title 🔧 Exercice — Créer la branche dev_td03 et protéger main
+# ================================================================
+#  EXERCICE — Préparer votre dépôt pour le TD03             [ 2 étapes ]
+# ================================================================
+#
+# Référez-vous à l'infographie ci-dessus pour réaliser :
+#   • Étape 1/2 — Créer la branche dev_td03
+#   • Étape 2/2 — Protéger la branche main (1 reviewer obligatoire)
+#
+# ----------------------------------------------------------------
+# Une fois les deux étapes effectuées, confirmez ici
+# ----------------------------------------------------------------
+tout_configure = ____
+✅ Vérification
+
+[ ]
+2.3 Accès au dépôt
+Infographie — Accès au dépôt et collaborateurs
+
+[ ]
+
+2.4 Tokens d'accès personnels (PAT)
+Infographie — Créer un PAT
+
+[ ]
+
+3. Collaboration avec GitHub
+3.1 Utilisation d'autres dépôts
+Infographie — Clôner et dupliquer un dépôt
+
+[ ]
+
+3.2 Les Issues de GitHub
+Infographie — Les Issues de GitHub
+
+[ ]
+
+3.3 Création de Pull Requests
+Infographie — La création de Pull Requests
+
+[ ]
+
+3.4 Examiner une Pull Request
+Infographie — Examiner une Pull Request
+
+[ ]
+
+⚙️ Préparation de l'exercice (exécuter d'abord)
+
+[ ]
+# @title ⚙️ Préparation de l'exercice (exécuter d'abord)
+import requests, os
+
+os.chdir("/content")
+
+github_username = "___"  # ← votre nom d'utilisateur GitHub (prenom-nom)
+REPO = "upjv-python-datascience"
+
+if github_username in ("", "___"):
+    print("❌ Remplacez ___ par votre nom d'utilisateur GitHub puis réexécutez cette cellule")
+else:
+    r = requests.get(f"https://api.github.com/repos/{github_username}/{REPO}")
+    if r.status_code == 200:
+        print(f"✅ Dépôt {github_username}/{REPO} trouvé — environnement prêt")
+    elif r.status_code == 403:
+        print("⚠️  Limite de requêtes GitHub atteinte (60/h) — réessayez dans quelques minutes")
+    else:
+        print(f"❌ Dépôt introuvable — vérifiez votre nom d'utilisateur GitHub ({github_username!r}) et que le dépôt est public")
+🔧 Exercice — Sauvegarder le TD02 via une Pull Request
+
+[ ]
+# @title 🔧 Exercice — Sauvegarder le TD02 via une Pull Request
+# ================================================================
+#  EXERCICE — Premier cycle complet dev_td02 → PR → merge [ 6 étapes ]
+# ================================================================
+#
+# Référez-vous aux infographies 11 (Pull Requests) et 12 (Examiner une PR)
+#
+# ----------------------------------------------------------------
+# Étape 1/6 — Créer la branche dev_td02
+# ----------------------------------------------------------------
+# Sur GitHub : onglet Code → icône branches → New branch
+# Nom : dev_td02  |  Source : main
+#
+# ----------------------------------------------------------------
+# Étape 2/6 — Uploader votre notebook sur dev_td02
+# ----------------------------------------------------------------
+# Téléchargez votre notebook depuis Colab : Fichier → Télécharger → .ipynb
+# Sur GitHub : sélectionner la branche dev_td02 → Add file → Upload files
+# Fichier à uploader : td02_enonce.ipynb
+#
+# ----------------------------------------------------------------
+# Étape 3/6 — Ouvrir une Pull Request
+# ----------------------------------------------------------------
+# Onglet Pull requests → New pull request
+# compare : dev_td02  →  base : main
+# Titre : TD02 — Notebook complété
+#
+# ----------------------------------------------------------------
+# Étape 4/6 — Désigner votre collègue comme reviewer
+# ----------------------------------------------------------------
+# Section Reviewers (icône engrenage) → sélectionner votre collègue
+#
+# ----------------------------------------------------------------
+# Étape 5/6 — Votre collègue approuve la PR si le travail est bien fait
+# ----------------------------------------------------------------
+# Côté reviewer : onglet Files changed → Review changes → Approve → Submit review
+#
+# ----------------------------------------------------------------
+# Étape 6/6 — Merger et supprimer la branche
+# ----------------------------------------------------------------
+# Merge pull request → Confirm merge → Delete branch
+✅ Vérification
+
+[ ]
+4. Workflow complet à partir du TD03
+Infographie — Workflow complet TD03 → TD10
+
+[ ]
+
+🧠 Quiz de fin de séance
+
+[ ]
+
+Produits payants Colab
+-
+Résilier les contrats ici
